@@ -20,7 +20,7 @@ WORKDIR /workspace
 RUN pip install --upgrade pip wheel
 
 # requirements.txt가 있으면 복사 및 설치
-COPY requirements.txt ./
+COPY app/requirements.txt ./
 RUN if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
 CMD ["bash"]
