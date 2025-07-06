@@ -8,6 +8,7 @@ A modern Python development environment with Docker Compose setup.
 - 🐳 Docker Compose for easy development setup
 - 🔧 Hot reload support for development
 - 📦 Virtual environment management
+- 🔍 Debug port support
 
 ## Quick Start
 
@@ -65,9 +66,11 @@ python-starter-kit/
 │   ├── main.py          # Main application file
 │   └── requirements.txt # Python dependencies
 ├── .devcontainer/
-│   └── Dockerfile       # Development container definition
-├── docker-compose.yml           # Base Docker Compose configuration
-├── docker-compose.override.yml  # Development overrides
+│   ├── Dockerfile       # Development container definition
+│   ├── devcontainer.json # VS Code devcontainer configuration
+│   └── post-create.sh   # Post-creation setup script
+├── data/                # Data directory (mounted in container)
+├── docker-compose.yml   # Docker Compose configuration
 └── README.md
 ```
 
@@ -88,8 +91,6 @@ python-starter-kit/
    docker-compose build app
    docker-compose up -d app
    ```
-
-
 
 ## License
 
